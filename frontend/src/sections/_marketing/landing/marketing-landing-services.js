@@ -19,7 +19,7 @@ const COLORS = ['primary', 'secondary', 'success', 'warning', 'primary', 'second
 
 const SERVICES = [
   {
-    name: '新加坡银行户口及服务',
+    name: '代办新加坡银行户口及服务',
     icon: '/assets/icons/service/ic_service_seo.svg',
     content: '',
     path: paths.marketing.services,
@@ -31,7 +31,7 @@ const SERVICES = [
     path: paths.marketing.services,
   },
   {
-    name: '实体 Mastercard 扣帐卡',
+    name: 'Mastercard 扣帐卡',
     icon: '/assets/icons/service/ic_service_analysis.svg',
     content: '',
     path: paths.marketing.services,
@@ -43,13 +43,13 @@ const SERVICES = [
     path: paths.marketing.services,
   },
   {
-    name: '旅游',
+    name: 'AI世界文旅',
     icon: '/assets/icons/service/ic_service_analysis.svg',
     content: '',
     path: paths.marketing.services,
   },
   {
-    name: '区块链系统',
+    name: 'Web3区块链系统',
     icon: '/assets/icons/service/ic_service_analysis.svg',
     content: '',
     path: paths.marketing.services,
