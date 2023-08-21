@@ -6,7 +6,9 @@ import os from 'os';
 
 import Stripe from 'stripe';
 
-const stripe = new Stripe('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const stripe = new Stripe(
+  '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'
+);
 
 dotenv.config();
 
@@ -32,8 +34,7 @@ app.post('/api/webchatpay', (req, res) => {
   }
   stripe.checkout.sessions
     .create({
-      payment_method_types: ['card'],
-      payment_method_types: ['wechat_pay', 'alipay'],
+      payment_method_types: ['wechat_pay', 'alipay', 'card'],
 
       // or you can take multiple payment methods with
       // payment_method_types: ['card', 'wechat_pay', ...]
