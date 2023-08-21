@@ -63,9 +63,9 @@ export default function PricingMarketingCard({ plan }) {
             <Typography variant="h3" component="span">
               ¥ 2,000
             </Typography>
-            <Typography variant="h5" component="span" sx={{ color: 'text.disabled' }}>
+            {/* <Typography variant="h5" component="span" sx={{ color: 'text.disabled' }}>
               /mo
-            </Typography>
+            </Typography> */}
           </Stack>
         </div>
 

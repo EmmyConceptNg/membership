@@ -40,13 +40,13 @@ export default function PricingMarketing({ plans }) {
           <Typography variant="h2">成为会员 {/* Become a Member */}</Typography>
         </Stack>
 
-        <Stack direction="row" alignItems="center">
+       {/*  <Stack direction="row" alignItems="center">
           <Typography variant="overline">MONTHLY</Typography>
 
           <Switch defaultChecked />
 
           <Typography variant="overline">YEARLY (save 10%)</Typography>
-        </Stack>
+        </Stack> */}
       </Stack>
 
       <Box
