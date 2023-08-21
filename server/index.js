@@ -51,7 +51,7 @@ app.post('/api/webchatpay', (req, res) => {
           price_data: {
             currency: 'cny',
             product_data: {
-              name: 'T-shirt',
+              name: 'Membership Fee',
             },
             unit_amount: 200000,
           },
