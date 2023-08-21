@@ -49,7 +49,7 @@ app.post('/api/webchatpay', (req, res) => {
       line_items: [
         {
           price_data: {
-            currency: 'rmb',
+            currency: 'cny',
             product_data: {
               name: 'T-shirt',
             },
