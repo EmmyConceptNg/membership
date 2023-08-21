@@ -34,7 +34,8 @@ app.post('/api/webchatpay', (req, res) => {
   }
   stripe.checkout.sessions
     .create({
-      payment_method_types: ['wechat_pay', 'alipay', 'card'],
+      payment_method_types: ['card'],
+      // payment_method_types: ['card', 'wechat_pay', 'alipay'],
 
       // or you can take multiple payment methods with
       // payment_method_types: ['card', 'wechat_pay', ...]
@@ -48,11 +49,11 @@ app.post('/api/webchatpay', (req, res) => {
       line_items: [
         {
           price_data: {
-            currency: 'usd',
+            currency: 'rmb',
             product_data: {
               name: 'T-shirt',
             },
-            unit_amount: 2000,
+            unit_amount: 200000,
           },
           quantity: 1,
         },
