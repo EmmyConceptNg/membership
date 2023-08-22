@@ -84,7 +84,7 @@ export default function PricingMarketingCard({ plan }) {
         color={(premiumLicense && 'primary') || 'inherit'}
         variant={(basicLicense && 'outlined') || 'contained'}
       >
-        付款
+        登记
       </LoadingButton>
     </Card>
   );

@@ -34,8 +34,9 @@ app.post('/api/webchatpay', (req, res) => {
   }
   stripe.checkout.sessions
     .create({
-      payment_method_types: ['card'],
+      // payment_method_types: ['card'],
       // payment_method_types: ['card', 'wechat_pay', 'alipay'],
+      payment_method_types: ['card', 'alipay'],
 
       // or you can take multiple payment methods with
       // payment_method_types: ['card', 'wechat_pay', ...]
