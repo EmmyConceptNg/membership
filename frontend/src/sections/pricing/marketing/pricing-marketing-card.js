@@ -32,6 +32,10 @@ export default function PricingMarketingCard({ plan }) {
         window.location.href = response.data.url;
         console.log(response.data.url);
         setBtnLoad(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setBtnLoad(false);
       });
   };
 
