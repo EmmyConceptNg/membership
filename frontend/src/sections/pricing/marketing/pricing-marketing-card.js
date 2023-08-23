@@ -60,20 +60,7 @@ export default function PricingMarketingCard({ plan }) {
         <Image alt="icon" src={plan.icon} sx={{ width: 64, height: 64 }} />
       </Stack>
 
-      <Stack spacing={2} sx={{ my: 5 }}>
-        <Stack direction="row" alignItems="center" sx={{ typography: 'body2' }}>
-          <Iconify icon="carbon:checkmark" sx={{ mr: 2, color: 'primary.main' }} />
-          公司会员” 现階段只接受香港、新加坡、英国、加拿大公司申请
-        </Stack>
-        <Stack direction="row" alignItems="center" sx={{ typography: 'body2' }}>
-          <Iconify icon="carbon:checkmark" sx={{ mr: 2, color: 'primary.main' }} />
-          如早鸟会员最终未能成功申请新加坡数字银行账户，可选择全额退款或将名额转让他人一次(再次不成功，将自动退款)
-        </Stack>
-        <Stack direction="row" alignItems="center" sx={{ typography: 'body2' }}>
-          <Iconify icon="carbon:checkmark" sx={{ mr: 2, color: 'primary.main' }} />
-          MasterCard设计已交由新加坡金管局(MAS)审批，预计数星期內完成，最终获批设计或有出入，早鸟会员敬请留意
-        </Stack>
-      </Stack>
+     
 
       <LoadingButton
         loading={btnLoad}

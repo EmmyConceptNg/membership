@@ -54,7 +54,7 @@ app.post('/api/webchatpay', (req, res) => {
             product_data: {
               name: req.body.name,
             },
-            unit_amount: req.body.price,
+            unit_amount: req.body.price * 100,
           },
           quantity: 1,
         },

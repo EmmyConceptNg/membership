@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types';
 
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import Switch from '@mui/material/Switch';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
+
+import Iconify from 'src/components/iconify/iconify';
 
 import PlanCard from './pricing-marketing-card';
 
@@ -52,7 +52,6 @@ export default function PricingMarketing() {
           <Typography variant="overline">YEARLY (save 10%)</Typography>
         </Stack> */}
       </Stack>
-
       <Box
         sx={{
           gap: 4,
@@ -68,6 +67,22 @@ export default function PricingMarketing() {
           <PlanCard key={index} plan={plan} />
         ))}
       </Box>
+      <Box>
+        <Stack spacing={2} sx={{ my: 5 }}>
+          <Stack direction="row" alignItems="center" sx={{ typography: 'body2' }}>
+            <Iconify icon="carbon:checkmark" sx={{ mr: 2, color: 'primary.main' }} />
+            公司会员” 现階段只接受香港、新加坡、英国、加拿大公司申请
+          </Stack>
+          <Stack direction="row" alignItems="center" sx={{ typography: 'body2' }}>
+            <Iconify icon="carbon:checkmark" sx={{ mr: 2, color: 'primary.main' }} />
+            如早鸟会员最终未能成功申请新加坡数字银行账户，可选择全额退款或将名额转让他人一次(再次不成功，将自动退款)
+          </Stack>
+          <Stack direction="row" alignItems="center" sx={{ typography: 'body2' }}>
+            <Iconify icon="carbon:checkmark" sx={{ mr: 2, color: 'primary.main' }} />
+            MasterCard设计已交由新加坡金管局(MAS)审批，预计数星期內完成，最终获批设计或有出入，早鸟会员敬请留意
+          </Stack>
+        </Stack>
+      </Box>{' '}
     </Container>
   );
 }
