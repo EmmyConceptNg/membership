@@ -1,4 +1,3 @@
-
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
@@ -11,8 +10,8 @@ import PlanCard from './pricing-marketing-card';
 // ----------------------------------------------------------------------
 
 const plans = [
-  { name: '普通会员', price: 200000 },
-  { name: '公司会员', price: 600000 },
+  { name: '普通会员', price: 2000 },
+  { name: '公司会员', price: 6000 },
 ];
 export default function PricingMarketing() {
   return (
