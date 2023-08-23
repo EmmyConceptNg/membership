@@ -10,7 +10,11 @@ import PlanCard from './pricing-marketing-card';
 
 // ----------------------------------------------------------------------
 
-export default function PricingMarketing({ plans }) {
+const plans = [
+  { name: '普通会员', price: 200000 },
+  { name: '公司会员', price: 600000 },
+];
+export default function PricingMarketing() {
   return (
     <Container
       sx={{
@@ -37,10 +41,10 @@ export default function PricingMarketing({ plans }) {
             Member
           </Typography>
 
-          <Typography variant="h2">成为会员 {/* Become a Member */}</Typography>
+          <Typography variant="h2">早鸟优惠 {/* Become a Member */}</Typography>
         </Stack>
 
-       {/*  <Stack direction="row" alignItems="center">
+        {/*  <Stack direction="row" alignItems="center">
           <Typography variant="overline">MONTHLY</Typography>
 
           <Switch defaultChecked />
@@ -60,14 +64,10 @@ export default function PricingMarketing({ plans }) {
           },
         }}
       >
-        {plans.slice(0, 1).map((plan) => (
-          <PlanCard key={plan.license} plan={plan} />
+        {plans.map((plan, index) => (
+          <PlanCard key={index} plan={plan} />
         ))}
       </Box>
     </Container>
   );
 }
-
-PricingMarketing.propTypes = {
-  plans: PropTypes.array,
-};

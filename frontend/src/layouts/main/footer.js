@@ -57,7 +57,7 @@ export default function Footer() {
       {/* <Logo single /> */}
 
       <Typography variant="caption" component="div" sx={{ color: 'text.secondary' }}>
-        © 2023. All rights reserved
+        Blockmind Technologies Limited. © 2023. All rights reserved
       </Typography>
     </Container>
   );

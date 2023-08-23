@@ -15,19 +15,13 @@ import ButtonWithModal from 'src/sections/_marketing/utils/modal';
 // ----------------------------------------------------------------------
 
 export default function PricingMarketingCard({ plan }) {
-  const basicLicense = plan.license === '加入';
-
-  const starterLicense = plan.license === 'Starter';
-
-  const premiumLicense = plan.license === 'Premium';
-
   const [open, setOpen] = useState(false);
 
   const [btnLoad, setBtnLoad] = useState(false);
-  const handlePayment = () => {
+  const handlePayment = (price, name) => {
     setBtnLoad(true);
     axios
-      .post('/api/webchatpay', {}, { headers: { 'Content-Type': 'application/json' } })
+      .post('/api/webchatpay', { price, name }, { headers: { 'Content-Type': 'application/json' } })
       .then((response) => {
         window.location.href = response.data.url;
         console.log(response.data.url);
@@ -45,27 +39,17 @@ export default function PricingMarketingCard({ plan }) {
         p: 5,
         pt: 8,
         boxShadow: (theme) => ({ md: theme.customShadows.z8 }),
-        ...(starterLicense && {
-          boxShadow: (theme) => ({ md: theme.customShadows.z24 }),
-        }),
       }}
     >
-      {open && <ButtonWithModal open={open} setOpen={setOpen} />}
-      {starterLicense && (
-        <Label color="info" sx={{ position: 'absolute', top: 24, left: 32 }}>
-          POPULAR
-        </Label>
-      )}
-
       <Stack direction="row" justifyContent="space-between">
         <div>
           <Typography variant="h4" component="div" sx={{ color: 'primary.main', mb: 2 }}>
-            加入{/* {plan.license} */}
+            {plan.name}
           </Typography>
 
           <Stack direction="row" alignItems="center" spacing={0.5}>
             <Typography variant="h3" component="span">
-              ¥ 2,000
+              ¥ {plan.price}
             </Typography>
             {/* <Typography variant="h5" component="span" sx={{ color: 'text.disabled' }}>
               /mo
@@ -76,13 +60,28 @@ export default function PricingMarketingCard({ plan }) {
         <Image alt="icon" src={plan.icon} sx={{ width: 64, height: 64 }} />
       </Stack>
 
+      <Stack spacing={2} sx={{ my: 5 }}>
+        <Stack direction="row" alignItems="center" sx={{ typography: 'body2' }}>
+          <Iconify icon="carbon:checkmark" sx={{ mr: 2, color: 'primary.main' }} />
+          公司会员” 现階段只接受香港、新加坡、英国、加拿大公司申请
+        </Stack>
+        <Stack direction="row" alignItems="center" sx={{ typography: 'body2' }}>
+          <Iconify icon="carbon:checkmark" sx={{ mr: 2, color: 'primary.main' }} />
+          如早鸟会员最终未能成功申请新加坡数字银行账户，可选择全额退款或将名额转让他人一次(再次不成功，将自动退款)
+        </Stack>
+        <Stack direction="row" alignItems="center" sx={{ typography: 'body2' }}>
+          <Iconify icon="carbon:checkmark" sx={{ mr: 2, color: 'primary.main' }} />
+          MasterCard设计已交由新加坡金管局(MAS)审批，预计数星期內完成，最终获批设计或有出入，早鸟会员敬请留意
+        </Stack>
+      </Stack>
+
       <LoadingButton
         loading={btnLoad}
-        onClick={handlePayment}
+        onClick={() => handlePayment(plan?.price, plan?.name)}
         fullWidth
         size="large"
-        color={(premiumLicense && 'primary') || 'inherit'}
-        variant={(basicLicense && 'outlined') || 'contained'}
+        color={(plan?.name === '普通会员' && 'primary') || 'inherit'}
+        variant={(plan?.name === '普通会员' && 'outlined') || 'contained'}
       >
         登记
       </LoadingButton>
@@ -94,7 +93,7 @@ PricingMarketingCard.propTypes = {
   plan: PropTypes.shape({
     caption: PropTypes.string,
     icon: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-    license: PropTypes.string,
+    name: PropTypes.string,
     options: PropTypes.array,
     price: PropTypes.string,
   }),

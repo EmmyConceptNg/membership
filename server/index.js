@@ -52,9 +52,9 @@ app.post('/api/webchatpay', (req, res) => {
           price_data: {
             currency: 'cny',
             product_data: {
-              name: 'Membership Fee',
+              name: req.body.name,
             },
-            unit_amount: 200000,
+            unit_amount: req.body.price,
           },
           quantity: 1,
         },
